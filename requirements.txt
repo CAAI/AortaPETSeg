@@ -1,0 +1,1 @@
+git+https://github.com/MIC-DKFZ/nnUNet.git@v2.6.2
