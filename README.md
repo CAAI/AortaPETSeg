@@ -4,7 +4,7 @@ To install this library
 python -m venv .aortapetseg_venv # (OPTIONAL)
 source .aortapetseg_venv/bin/activate # (OPTIONAL)
 
-pip install git+https://github.com/CAAI/rh-report.git
+pip install git+https://github.com/CAAI/AortaPETSeg.git
 ```
 
 
