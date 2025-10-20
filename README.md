@@ -12,3 +12,6 @@ pip install -r requirements.txt
 ```
 python main.py [suv_pet_file_path] [out_seg_file_path]
 ```
+
+## Preprocessing
+Data must be converted to Standardized Uptake Value (SUV) of the first 40s of data.
