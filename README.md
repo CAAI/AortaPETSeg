@@ -7,8 +7,6 @@ source .aortapetseg_venv/bin/activate # (OPTIONAL)
 pip install git+https://github.com/CAAI/AortaPETSeg.git
 ```
 
-
-
 ## Usage
 
 ```

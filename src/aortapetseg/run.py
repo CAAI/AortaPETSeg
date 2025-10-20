@@ -11,6 +11,8 @@ def _download_weights():
   """ Download model weights from Zenodo
     https://doi.org/10.5281/zenodo.17357233
   """
+  global nnUNet_results
+  
   url = "https://zenodo.org/records/17357233/files/weights.zip?download=1"
 
   if nnUNet_results is None:
