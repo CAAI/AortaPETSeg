@@ -1,5 +1,5 @@
 import os
-from subprocess import check_output
+import subprocess
 import tempfile
 from shutil import copy
 import torch
@@ -18,7 +18,9 @@ def _download_weights():
       raise Exception("Task with same ID (300) already exists but is not aorta_seg")
     
     print("Downloading weights...")
-    check_output(["curl", url, "|", "bsdtar", "-xvf-", "-C", nnUNet_results],shell=True)
+    curl = subprocess.Popen(["curl", url], stdout=subprocess.PIPE)
+    subprocess.check_output(["bsdtar", "-xvf-", "-C", nnUNet_results], stdin=curl.stdout)
+    curl.wait()
     print(f"  Done")
 
 def main(suv_file_path,seg_out_file_path):
