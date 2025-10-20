@@ -60,26 +60,15 @@ def main(suv_file_path,seg_out_file_path):
     use_folds=folds
   )
   
-  with tempfile.TemporaryDirectory() as in_dir:
-    with tempfile.TemporaryDirectory() as out_dir:
-      # Copy input file to temp
-      copy(suv_file_path,os.path.join(in_dir, "in_0000.nii.gz"))
-      
-      # Run inference
-      predictor.predict_from_files(
-        [os.path.join(in_dir, "in_0000.nii.gz")], [os.path.join(out_dir, "segmentation.nii.gz")],
-        save_probabilities=False, overwrite=False,
-        num_processes_preprocessing=2, num_processes_segmentation_export=2,
-        folder_with_segs_from_prev_stage=None, num_parts=1, part_id=0
-      )
 
-      # check_output(["nnUNetv2_predict", "-i", str(in_dir), "-o", str(out_dir), "-d", "300", "-f", "0", "1", "2", "3", "4", "-p", "nnUNetResEncUNetMPlans", "-c", "3d_fullres"])
-    
-      # out_file = [os.path.join(out_dir, x) for x in os.listdir(out_dir) if str(x).endswith(".nii.gz")]
-      # assert len(out_file) == 1
-      # out_file = out_file[0]
-      # copy(out_file,seg_out_file_path)
-      copy(os.path.join(out_dir, "segmentation.nii.gz"),seg_out_file_path)
+      
+  # Run inference
+  predictor.predict_from_files(
+    [suv_file_path], [seg_out_file_path],
+    save_probabilities=False, overwrite=False,
+    num_processes_preprocessing=2, num_processes_segmentation_export=2,
+    folder_with_segs_from_prev_stage=None, num_parts=1, part_id=0
+  )
 
 if __name__ == "__main__":
   import sys
