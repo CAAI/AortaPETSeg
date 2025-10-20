@@ -11,16 +11,7 @@ def _download_weights():
   """ Download model weights from Zenodo
     https://doi.org/10.5281/zenodo.17357233
   """
-  global nnUNet_results
-  
   url = "https://zenodo.org/records/17357233/files/weights.zip?download=1"
-
-  if nnUNet_results is None:
-    raw_dir = os.environ.get("nnUNet_raw_data_base",None)
-    assert raw_dir is not None
-    nnUNet_results = os.path.join(raw_dir, "nnUNet_results")
-  
-  os.makedirs(nnUNet_results,exist_ok=True)
 
   if not "Dataset300_aorta_seg" in os.listdir(nnUNet_results):
     if any("Dataset300" in x for x in os.listdir(nnUNet_results)):
@@ -31,6 +22,14 @@ def _download_weights():
     print(f"  Done")
 
 def main(suv_file_path,seg_out_file_path):
+  global nnUNet_results
+
+  if nnUNet_results is None:
+    raw_dir = os.environ.get("nnUNet_raw_data_base",None)
+    assert raw_dir is not None
+    nnUNet_results = os.path.join(raw_dir, "nnUNet_results")
+  os.makedirs(nnUNet_results,exist_ok=True)
+  
   # Download weights if needed
   _download_weights()
 
