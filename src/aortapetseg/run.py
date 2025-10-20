@@ -61,12 +61,10 @@ def main(suv_file_path,seg_out_file_path):
     os.path.join(nnUNet_results, convert_id_to_dataset_name(dataset), f'{trainer}__{plans}__{configuration}'),
     use_folds=folds
   )
-  
-
       
   # Run inference
   predictor.predict_from_files(
-    [suv_file_path], [seg_out_file_path],
+    [[suv_file_path]], [seg_out_file_path],
     save_probabilities=False, overwrite=False,
     num_processes_preprocessing=2, num_processes_segmentation_export=2,
     folder_with_segs_from_prev_stage=None, num_parts=1, part_id=0

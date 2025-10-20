@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aortapetseg"
-version = '0.1.6'
+version = '0.1.7'
 description = "Aorta Segmentation on PET data"
 authors = [{name = "U. Lindberg", email = "ulrich.lindberg@regionh.dk"}]
 readme = "README.md"
