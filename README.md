@@ -1,11 +1,13 @@
 ## Installation
+To install this library
 ```cmd
-git clone https://github.com/CAAI/AortaPETSeg
-cd AortaPETSeg
-python -m venv .aorta_venv # (OPTIONAL)
-source .aorta_venv/bin/activate # (OPTIONAL)
-pip install -r requirements.txt
+python -m venv .aortapetseg_venv # (OPTIONAL)
+source .aortapetseg_venv/bin/activate # (OPTIONAL)
+
+pip install git+https://github.com/CAAI/rh-report.git
 ```
+
+
 
 ## Usage
 

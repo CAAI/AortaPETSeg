@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aortapetseg"
+version = '0.1.0'
+description = "Aorta Segmentation on PET data"
+authors = [{name = "U. Lindberg", email = "ulrich.lindberg@regionh.dk"}]
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "nnUNet@git+https://github.com/MIC-DKFZ/nnUNet.git@v2.6.2",
+]
+
+[project.optional-dependencies]
+lint = ["flake8"]
+test = ["pytest", "mypy"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["aortapetseg"]
+
+[tool.flake8]
+max-line-length = 99
