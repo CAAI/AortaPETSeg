@@ -16,7 +16,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "nnUNet@git+https://github.com/MIC-DKFZ/nnUNet.git@v2.6.2",
+    "nnUNetv2@git+https://github.com/MIC-DKFZ/nnUNet.git@v2.6.2",
 ]
 
 [project.optional-dependencies]
