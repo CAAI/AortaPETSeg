@@ -1,5 +1,5 @@
 # Aorta PET Segmentation
-![AortaPETSeg](https://github.com/CAAI/AortaPETSeg/blob/master/image.jpg?raw=true)
+![AortaPETSeg](https://github.com/CAAI/AortaPETSeg/blob/master/resources/AortaPETSeg.png)
 
 ## Installation
 To install this library
