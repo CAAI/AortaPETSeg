@@ -22,6 +22,8 @@ def _download_weights():
     print(f"  Done")
 
 def main(suv_file_path,seg_out_file_path):
+  global nnUNet_results
+
   if nnUNet_results is None:
     raw_dir = os.environ.get("nnUNet_raw_data_base",None)
     assert raw_dir is not None
